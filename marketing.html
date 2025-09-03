@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vida Leve - Dieta e Alimentação</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://via.placeholder.com/32x32.png?text=🍎" type="image/png">
+
+  <style>
+    :root {
+      --verde-claro: #a8e6cf;
+      --verde-medio: #76c893;
+      --verde-escuro: #4CAF50;
+      --laranja: #ffb347;
+      --vermelho: #ff6b6b;
+      --branco: #ffffff;
+      --cinza-claro: #f9f9f9;
+      --cinza: #cccccc;
+      --preto: #333333;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--cinza-claro);
+      color: var(--preto);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, #76c893, #a8e6cf);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    nav {
+      background-color: var(--verde-escuro);
+      text-align: center;
+      padding: 12px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--laranja);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px 20px;
+      background-color: var(--branco);
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      color: var(--verde-escuro);
+      margin-bottom: 10px;
+    }
+
+    .img-container {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+    .img-container img {
+      width: 200px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .img-container img:hover {
+      transform: scale(1.05);
+    }
+
+    .checkout-button {
+      display: inline-block;
+      background: linear-gradient(to right, var(--verde-medio), var(--verde-escuro));
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    .checkout-button:hover {
+      background: linear-gradient(to right, var(--laranja), var(--vermelho));
+    }
+
+    .produto-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .produto {
+      background-color: var(--branco);
+      border: 1px solid var(--cinza);
+      border-radius: 12px;
+      padding: 20px;
+      width: 280px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+      transition: transform 0.3s;
+    }
+
+    .produto:hover {
+      transform: translateY(-5px);
+    }
+
+    .produto-destaque {
+      border: 2px solid var(--laranja);
+      background-color: #fffbea;
+    }
+
+    footer {
+      background-color: var(--verde-escuro);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .produto-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🍏 Vida Leve</h1>
+    <p>Sua jornada saudável começa aqui!</p>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#imagens">Galeria</a>
+    <a href="#contato">Contato</a>
+    <a href="#produtos">Produtos</a>
+  </nav>
+
+  <main>
+    <section id="sobre">
+      <h2>Sobre a Vida Leve</h2>
+      <p>Oferecemos planos de dieta personalizados, dicas de alimentação saudável e produtos naturais para o seu bem-estar físico e emocional. Acreditamos que comer bem é viver melhor.</p>
+    </section>
+
+    <section id="imagens">
+      <h2>Galeria de Alimentação Saudável</h2>
+      <div class="img-container">
+        <img src="https://imgs.search.brave.com/rfo-JLRc54KRxJ9GHgbNgNtq6orZ-n6kuo7Rl3uTEXY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tb2lu/aG9nbG9iby5jb20u/YnIvd3AtY29udGVu/dC91cGxvYWRzLzIw/MTUvMDYvc2FsYWRh/LXRyb3BpY2FsLmpw/Zw" alt="Salada">
+        <img src="https://imgs.search.brave.com/VcwvGfjwgkyzCAaLl7UV6P_sfM1Z0sr-BuG4Mk3H710/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9m/cm9udC12aWV3LXBp/bmstc21vb3RoaWUt/Ym90dGxlLXdpdGgt/c3RyYXdfMjMtMjE0/ODUyNjU0NC5qcGc_/c2VtdD1haXNfaHli/cmlkJnc9NzQwJnE9/ODA" alt="Smoothie">
+        <img src="https://imgs.search.brave.com/manj8iepKoGrfXQndjA5YwyvZr7bRlK65VrK2eVV-CA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMw/NDUyMjk0NS9wdC9m/b3RvL21hbnktZGlm/ZmVyZW50LWJlcnJp/ZXMtaW4tdGhlLWZv/cm0tb2YtYS1mcmFt/ZS1vbi1hLXdoaXRl/LWJhY2tncm91bmQu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PWItQUxrMFhYWlJS/YmEwQUdWb0U3U2ZH/RVZnczdEa3ozMnNk/OGQxLWM5dzQ9" alt="Frutas">
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2>Entre em Contato</h2>
+      <p>Email: <a href="mailto:dietafit204@gmail.com">dietafit204@gmail.com</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/dieta_emagrecimento_pessoal/" target="_blank">@dieta_emagrecimento_pessoal</a></p>
+    </section>
+
+    <!-- Seção de Produtos -->
+    <section id="produtos">
+      <h2>Escolha Seu Plano de Transformação</h2>
+      <p>Comece de forma leve ou vá direto para uma mudança definitiva. A escolha que você faz hoje impacta sua saúde amanhã.</p>
+
+      <div class="produto-container">
+
+        <!-- Produto Simples -->
+        <div class="produto">
+          <h3>Plano Simples</h3>
+          <p>Ideal para quem está começando e quer experimentar uma rotina alimentar saudável, sem pressa e com equilíbrio.</p>
+          <p style="font-size: 18px; font-weight: bold;">R$ 15,99</p>
+          <a href="https://pay.kirvano.com/9dca99d8-189e-4caf-aef4-36d80e16705b" class="checkout-button">Comprar Simples</a>
+        </div>
+
+        <!-- Produto Definitivo -->
+        <div class="produto produto-destaque">
+          <h3>Plano Definitivo <span style="color: var(--vermelho); font-size: 14px;">(com desconto)</span></h3>
+          <p>Para quem quer resultados reais, duradouros e sem enrolação. Transforme seu comportamento alimentar com foco e propósito.</p>
+          <p style="text-decoration: line-through; color: #888;">R$ 39,99</p>
+          <p style="font-size: 22px; font-weight: bold; color: var(--verde-escuro);">R$ 20,00</p>
+          <a href="https://pay.kirvano.com/81eab529-5ccd-458b-97aa-8506c408b641" class="checkout-button">Comprar Definitivo</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Vida Leve - Todos os direitos reservados</p>
+  </footer>
+
+</body>
+</html>
