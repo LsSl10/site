@@ -1,233 +1,117 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vida Leve - Dieta e Alimentação</title>
+<meta charset="UTF-8">
+<title>Dieta Saudável</title>
+<style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: Arial, sans-serif; background-color: #f7f7f7; line-height: 1.6; color: #333; scroll-behavior: smooth; }
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    section { display: flex; flex-wrap: wrap; padding: 80px 50px; align-items: center; min-height: 100vh; }
+    .text { flex: 1; padding: 20px; }
+    .image { flex: 1; padding: 20px; }
+    .image img { max-width: 100%; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
 
-  <!-- Favicon -->
-  <link rel="icon" href="https://via.placeholder.com/32x32.png?text=🍎" type="image/png">
+    h1 { font-size: 36px; color: #28a745; margin-bottom: 20px; }
+    h2 { font-size: 28px; color: #218838; margin-bottom: 15px; }
+    p { font-size: 18px; margin-bottom: 20px; }
+    strong { color: #1a531b; }
 
-  <style>
-    :root {
-      --verde-claro: #a8e6cf;
-      --verde-medio: #76c893;
-      --verde-escuro: #4CAF50;
-      --laranja: #ffb347;
-      --vermelho: #ff6b6b;
-      --branco: #ffffff;
-      --cinza-claro: #f9f9f9;
-      --cinza: #cccccc;
-      --preto: #333333;
-    }
+    .btn { display: inline-block; background-color: #28a745; color: white; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; margin-top: 10px; transition: transform 0.3s, background-color 0.3s; }
+    .btn:hover { background-color: #218838; transform: scale(1.05); }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* Cores de destaque para ofertas */
+    .offer-main { background-color: #e0f7e9; border-left: 6px solid #28a745; padding: 20px; border-radius: 10px; margin-top: 20px; }
+    .offer-alt { background-color: #d0e8f7; border-left: 6px solid #1a73e8; padding: 20px; border-radius: 10px; margin-top: 20px; }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--cinza-claro);
-      color: var(--preto);
-      line-height: 1.6;
-    }
+    /* Área de contato */
+    .contact { background-color: #fffbe0; padding: 30px; border-radius: 15px; text-align: center; box-shadow: 0 6px 18px rgba(0,0,0,0.1); margin-top: 40px; }
+    .contact input { padding: 12px; width: 80%; max-width: 300px; margin: 10px 0; border-radius: 8px; border: 1px solid #ccc; font-size: 16px; }
+    .contact .btn { margin-top: 0; width: 100%; max-width: 300px; }
 
-    header {
-      background: linear-gradient(to right, #76c893, #a8e6cf);
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-    }
+    /* Animações simples */
+    .fade-in { opacity: 0; transform: translateY(30px); animation: fadeIn 1s forwards; }
+    .fade-in.delay-1 { animation-delay: 0.3s; }
+    .fade-in.delay-2 { animation-delay: 0.6s; }
+    .fade-in.delay-3 { animation-delay: 0.9s; }
 
-    nav {
-      background-color: var(--verde-escuro);
-      text-align: center;
-      padding: 12px 0;
-    }
+    @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 20px;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--laranja);
-    }
-
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 30px 20px;
-      background-color: var(--branco);
-      box-shadow: 0 0 15px rgba(0,0,0,0.05);
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-
-    section {
-      margin-bottom: 40px;
-    }
-
-    h2 {
-      color: var(--verde-escuro);
-      margin-bottom: 10px;
-    }
-
-    .img-container {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 15px;
-    }
-
-    .img-container img {
-      width: 200px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .img-container img:hover {
-      transform: scale(1.05);
-    }
-
-    .checkout-button {
-      display: inline-block;
-      background: linear-gradient(to right, var(--verde-medio), var(--verde-escuro));
-      color: white;
-      padding: 12px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 10px;
-      transition: background 0.3s;
-    }
-
-    .checkout-button:hover {
-      background: linear-gradient(to right, var(--laranja), var(--vermelho));
-    }
-
-    .produto-container {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .produto {
-      background-color: var(--branco);
-      border: 1px solid var(--cinza);
-      border-radius: 12px;
-      padding: 20px;
-      width: 280px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.06);
-      transition: transform 0.3s;
-    }
-
-    .produto:hover {
-      transform: translateY(-5px);
-    }
-
-    .produto-destaque {
-      border: 2px solid var(--laranja);
-      background-color: #fffbea;
-    }
-
-    footer {
-      background-color: var(--verde-escuro);
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 768px) {
-      .produto-container {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 10px;
-      }
-    }
-  </style>
+</style>
 </head>
 <body>
 
-  <header>
-    <h1>🍏 Vida Leve</h1>
-    <p>Sua jornada saudável começa aqui!</p>
-  </header>
+<!-- Seção Hero -->
+<section style="background: linear-gradient(to right, #f7f7f7, #e0f7e9);">
+    <div class="image fade-in"><img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fGRpZXRhfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=500" alt="Mulher acima do peso emagrecendo"></div>
+    <div class="text fade-in delay-1">
+        <h1>Descubra o Segredo que Está Impedindo Você de Emagrecer!</h1>
+        <p>Mesmo comendo pouco, muitas pessoas não conseguem resultados. Clique abaixo para saber como acelerar seu metabolismo!</p>
+        <a href="https://pay.kirvano.com/81eab529-5ccd-458b-97aa-8506c408b641" class="btn">Quero saber agora!</a>
+    </div>
+</section>
 
-  <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#imagens">Galeria</a>
-    <a href="#contato">Contato</a>
-    <a href="#produtos">Produtos</a>
-  </nav>
+<!-- Seção Receitas -->
+<section style="background-color: #fff;">
+       <div class="text fade-in">
+        <h2 style="font-size:42px; color:#28a745; margin-bottom:30px;">Problemas sobre dieta</h2>
+        <p style="font-size:20px; line-height:1.8; max-width:700px;">
+            O que é dieta? Muitas pessoas pensam que dieta se resume apenas em comer bem, mas na verdade ela envolve diversos fatores que impactam diretamente a sua saúde, metabolismo e resultados a longo prazo. Descubra como pequenos ajustes podem transformar sua rotina alimentar e acelerar seu progresso!
+        </p>
+        <a href="https://pay.kirvano.com/9dca99d8-189e-4caf-aef4-36d80e16705b" class="btn" style="padding:18px 40px; font-size:18px;">Quero saber! </a>
+    </div>
+    <div class="image fade-in delay-1">
+        <img src="https://images.unsplash.com/photo-1706467583664-a27cc8e675ab?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjQ2fHxkaWV0YXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=500" alt="Frutas e alimentação saudável">
+    </div>
+</section>
 
-  <main>
-    <section id="sobre">
-      <h2>Sobre a Vida Leve</h2>
-      <p>Oferecemos planos de dieta personalizados, dicas de alimentação saudável e produtos naturais para o seu bem-estar físico e emocional. Acreditamos que comer bem é viver melhor.</p>
-    </section>
-
-    <section id="imagens">
-      <h2>Galeria de Alimentação Saudável</h2>
-      <div class="img-container">
-        <img src="https://imgs.search.brave.com/rfo-JLRc54KRxJ9GHgbNgNtq6orZ-n6kuo7Rl3uTEXY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tb2lu/aG9nbG9iby5jb20u/YnIvd3AtY29udGVu/dC91cGxvYWRzLzIw/MTUvMDYvc2FsYWRh/LXRyb3BpY2FsLmpw/Zw" alt="Salada">
-        <img src="https://imgs.search.brave.com/VcwvGfjwgkyzCAaLl7UV6P_sfM1Z0sr-BuG4Mk3H710/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9m/cm9udC12aWV3LXBp/bmstc21vb3RoaWUt/Ym90dGxlLXdpdGgt/c3RyYXdfMjMtMjE0/ODUyNjU0NC5qcGc_/c2VtdD1haXNfaHli/cmlkJnc9NzQwJnE9/ODA" alt="Smoothie">
-        <img src="https://imgs.search.brave.com/manj8iepKoGrfXQndjA5YwyvZr7bRlK65VrK2eVV-CA/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMw/NDUyMjk0NS9wdC9m/b3RvL21hbnktZGlm/ZmVyZW50LWJlcnJp/ZXMtaW4tdGhlLWZv/cm0tb2YtYS1mcmFt/ZS1vbi1hLXdoaXRl/LWJhY2tncm91bmQu/anBnP3M9NjEyeDYx/MiZ3PTAmaz0yMCZj/PWItQUxrMFhYWlJS/YmEwQUdWb0U3U2ZH/RVZnczdEa3ozMnNk/OGQxLWM5dzQ9" alt="Frutas">
-      </div>
-    </section>
-
-    <section id="contato">
-      <h2>Entre em Contato</h2>
-      <p>Email: <a href="mailto:dietafit204@gmail.com">dietafit204@gmail.com</a></p>
-      <p>Instagram: <a href="https://www.instagram.com/dieta_emagrecimento_pessoal/" target="_blank">@dieta_emagrecimento_pessoal</a></p>
-    </section>
-
-    <!-- Seção de Produtos -->
-    <section id="produtos">
-      <h2>Escolha Seu Plano de Transformação</h2>
-      <p>Comece de forma leve ou vá direto para uma mudança definitiva. A escolha que você faz hoje impacta sua saúde amanhã.</p>
-
-      <div class="produto-container">
-
-        <!-- Produto Simples -->
-        <div class="produto">
-          <h3>Plano Simples</h3>
-          <p>Ideal para quem está começando e quer experimentar uma rotina alimentar saudável, sem pressa e com equilíbrio.</p>
-          <p style="font-size: 18px; font-weight: bold;">R$ 15,99</p>
-          <a href="https://pay.kirvano.com/9dca99d8-189e-4caf-aef4-36d80e16705b" class="checkout-button">Comprar Simples</a>
+<!-- Seção Produto Principal -->    
+<section id="produto" style="background-color: #e0f7e9;">
+    <div class="image fade-in"><img src="https://images.unsplash.com/photo-1613082410785-22292e8426e7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTMwfHxkaWV0YXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&q=60&w=500" alt="Ebook de dieta"></div>
+    <div class="text fade-in delay-1">
+        <div class="offer-main">
+            <h2>dieta definitiva</h2>
+            <p>Para quem quer resultados reais, duradouros e sem enrolação. Transforme seu comportamento alimentar com foco e propósito.</p>
+            <a href="https://pay.kirvano.com/81eab529-5ccd-458b-97aa-8506c408b641" class="btn">Comprar Agora!</a>
         </div>
-
-        <!-- Produto Definitivo -->
-        <div class="produto produto-destaque">
-          <h3>Plano Definitivo <span style="color: var(--vermelho); font-size: 14px;">(com desconto)</span></h3>
-          <p>Para quem quer resultados reais, duradouros e sem enrolação. Transforme seu comportamento alimentar com foco e propósito.</p>
-          <p style="text-decoration: line-through; color: #888;">R$ 39,99</p>
-          <p style="font-size: 22px; font-weight: bold; color: var(--verde-escuro);">R$ 20,00</p>
-          <a href="https://pay.kirvano.com/81eab529-5ccd-458b-97aa-8506c408b641" class="checkout-button">Comprar Definitivo</a>
+        <div class="offer-alt">
+            <h2>dieta simples</h2>
+            <p>Ideal para quem está começando e quer experimentar uma rotina alimentar saudável, sem pressa e com equilíbrio </p>
+            <a href="https://pay.kirvano.com/9dca99d8-189e-4caf-aef4-36d80e16705b" class="btn">Quero essa opção!</a>
         </div>
+    </div>
+    <!-- Seção Depoimentos -->
+<section style="background-color: #f0f8ff; padding: 80px 50px;">
+    <div style="text-align:center; margin-bottom:60px;">
+        <h2 style="font-size:42px; color:#28a745;">O que nossos clientes dizem:</h2>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
+        <div style="background-color:#fff; padding:30px; border-radius:15px; max-width:350px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+            <p style="font-size:18px;">"Mudou minha vida! Perdi 4 quilos em 3 semanas de foco e receitas fáceis de seguir!"</p>
+            <strong>- Ana S.</strong>
+        </div>
+        <div style="background-color:#fff; padding:30px; border-radius:15px; max-width:350px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+            <p style="font-size:18px;">"As receitas são incríveis e super práticas. Em 2 semanas já vi diferença no corpo e na disposição."</p>
+            <strong>- João M.</strong>
+        </div>
+        <div style="background-color:#fff; padding:30px; border-radius:15px; max-width:350px; box-shadow:0 6px 20px rgba(0,0,0,0.15);">
+            <p style="font-size:18px;">"Nunca pensei que fosse possível emagrecer sem passar fome. Recomendo para todos que querem resultados reais."</p>
+            <strong>- Camila R.</strong>
+        </div>
+    </div>
+</section>
 
-      </div>
-    </section>
-  </main>
+</section>
 
+<!-- Seção Contato -->
+<section style="background-color: #fffbe0;">
+    <div class="contact fade-in">
+        <h2>Entre em Contato Conosco!</h2>
+        <p>Tem alguma dúvida ou quer mais informações sobre nossas receitas e produtos?</p>
+        <h1>Email:<a href="mailto:dietafit204@gmail.com">dietafit204@gmail.com</a></h1>
+        <h1>instagram:<a href="https://www.instagram.com/dieta_emagrecimento_pessoal/" target="_blank">@dieta_emagrecimento_pessoal</a></h1>
+    </div>
+</section>
   <footer>
     <p>&copy; 2025 Vida Leve - Todos os direitos reservados</p>
   </footer>
